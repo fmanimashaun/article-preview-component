@@ -1,0 +1,27 @@
+@use '../abstract/variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  // Color Variables
+  --clr-primary: #{$color-dark-grayish-blue};
+  --clr-secondary: #{$color-desaturated-dark-blue};
+  --clr-accent: #{$color-grayish-blue};
+  --clr-background: #{$color-light-grayish-blue};
+
+  // Font Size (Base set to 16px for easy scaling)
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family;
+  font-size: 0.8125rem;
+  color: var(--clr-primary);
+  line-height: 1.5;
+  font-weight: $font-weight-regular;
+  background-color: var(--clr-background);
+}
