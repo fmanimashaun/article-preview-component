@@ -7,6 +7,15 @@
   border-radius: 20px;
   width: 100%;
   background-color: $color-light;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 935px;
+  margin-inline: auto;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 0;
+  }
+
   &__header {
     &-img {
       display: block;
@@ -15,6 +24,12 @@
       object-fit: cover;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
+
+      @media screen and (min-width: 768px) {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+        
+      }
     }
   }
 
