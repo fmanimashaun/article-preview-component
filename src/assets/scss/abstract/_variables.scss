@@ -10,3 +10,21 @@ $color-dark: hsl(0, 0%, 0%);
 $font-family: 'Manrope', sans-serif;
 $font-weight-regular: 500;
 $font-weight-bold: 700;
+
+// spacing
+$container-inline: clamp(1.5rem, 0.9278rem + 2.4413vw, 3.125rem); // 24px 50px
+$container-block: clamp(2rem, 1.6039rem + 1.6901vw, 3.125rem); // 32px 50px
+$card-content-top: clamp(2.5rem, 2.2799rem + 0.939vw, 3.125rem); // 40px 60px
+$card-content-bottom: clamp(1.25rem, 0.6998rem + 2.3474vw, 2.8125rem); // 20px 45px
+$card-content-inline: clamp(2rem, 1.6039rem + 1.6901vw, 3.125rem); // 32px 50px
+$card-author-img: clamp(2.5rem, 2.2799rem + 0.939vw, 3.125rem); // 40px 50px
+$card-button: clamp(1.875rem, 1.6549rem + 0.939vw, 2.5rem); // 30px 40px
+$card-share-block: clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem); // 16px 30px 
+
+// font-size
+$card-title: clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem); // 16px 28px
+$card-content: clamp(0.8125rem, 0.7025rem + 0.4695vw, 1.125rem); // 13px 18px
+$card-accent: clamp(0.8125rem, 0.7465rem + 0.2817vw, 1rem); // 13px 16px
+
+// shadows
+$card-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1);

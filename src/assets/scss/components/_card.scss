@@ -1,62 +1,132 @@
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 .card {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 0;
   border-radius: 20px;
   width: 100%;
   background-color: $color-light;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: $card-shadow;
   max-width: 935px;
   margin-inline: auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 600px) {
     flex-direction: row;
-    gap: 0;
   }
 
-  &__header {
-    &-img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
+  &__btn-wrapper {
+    position: relative;
+    border: 1px solid red;
 
-      @media screen and (min-width: 768px) {
-        border-top-right-radius: 0;
-        border-bottom-left-radius: 20px;
-        
-      }
+    & > *:first-child {
+      position: absolute;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      bottom: calc(100% + 20px);
+      border: 1px solid blue;
+      width: max-content;
+      left: 50%;
+      transform: translateX(-50%);
+      @include share-typography;
+      background-color: $color-dark-grayish-blue;
+      padding: 16px 16px;
+      border-radius: 10px;
+    }
+  }
+
+  &__social-icons {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__share-btn {
+    @include btn;
+  }
+
+  &__header-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 20px 20px 0 0;
+
+    @media screen and (min-width: 600px) {
+      border-radius: 20px 0 0 20px;
+      height: 100%;
+      max-width: 365px;
     }
   }
 
   &__content {
+    position: relative;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     gap: 1.875rem;
-    padding-inline: 2rem;
-    padding-block-end: 1.25rem;
+    padding: $card-content-top $card-content-inline $card-content-bottom;
+
+    &-social {
+      visibility: hidden;
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      padding-inline: $card-content-inline;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-radius: 0 0 20px 20px;
+      padding-block: $card-share-block;
+      background-color: $color-dark-grayish-blue;
+      transition: visibility 0.3s ease;
+
+
+
+      @media screen and (min-width: 600px) {
+        border-radius: 0 0 20px 0;
+
+        display: none;
+      }
+
+      &.active {
+        visibility: visible;
+      }
+
+      & > *:not(:last-child) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+
+        @include share-typography;
+      }
+    }
   }
+
   &__body {
     & > * {
       margin: 0;
+      max-inline-size: 450px;
     }
 
     h3 {
-      font-size: 1rem;
-      letter-spacing: -0.01em;
-      margin-block-end: 0.8125rem;
+      font-size: $card-title;
+      letter-spacing: -3%;
+      margin-block-end: 1.375em;
     }
 
     p {
-      font-size: 0.8125rem;
+      font-size: $card-content;
       line-height: 1.54;
-      letter-spacing: -0.01em;
+      letter-spacing: -4.5%;
     }
   }
+
   &__footer {
     display: flex;
     justify-content: space-between;
@@ -68,8 +138,8 @@
 
       &-img {
         display: block;
-        width: 40px;
-        height: 40px;
+        width: $card-author-img;
+        height: $card-author-img;
         object-fit: cover;
         border-radius: 50%;
         margin-inline-end: 1rem;
@@ -80,7 +150,7 @@
         flex-direction: column;
         justify-content: center;
         gap: 0.625rem;
-        font-size: 0.8125rem;
+        font-size: $card-accent;
         color: var(--clr-primary);
         line-height: 1;
 
