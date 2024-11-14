@@ -20,6 +20,9 @@ $card-content-inline: clamp(2rem, 1.6039rem + 1.6901vw, 3.125rem); // 32px 50px
 $card-author-img: clamp(2.5rem, 2.2799rem + 0.939vw, 3.125rem); // 40px 50px
 $card-button: clamp(1.875rem, 1.6549rem + 0.939vw, 2.5rem); // 30px 40px
 $card-share-block: clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem); // 16px 30px 
+$tooltip-block: clamp(1rem, 0.3846rem + 0.9615vw, 1.25rem); // 16px 20px
+$tooltip-inline: clamp(1rem, -3.4615rem + 6.9712vw, 2.8125rem); // 16px 45px
+$share-gap: clamp(0.5rem, 0.2359rem + 1.1268vw, 1.25rem); // 8px 20px
 
 // font-size
 $card-title: clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem); // 16px 28px

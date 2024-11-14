@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   width: 100%;
   background-color: $color-light;
   box-shadow: $card-shadow;
@@ -22,18 +22,18 @@
     & > *:first-child {
       position: absolute;
       display: none;
-      gap: 8px;
+      gap: $share-gap;
       justify-content: center;
       align-items: center;
       flex-wrap: nowrap;
-      bottom: calc(100% + 20px);
+      bottom: calc(100% + 1.25rem);
       width: max-content;
       left: 50%;
       transform: translateX(-50%);
       @include share-typography;
       background-color: $color-dark-grayish-blue;
-      padding: 16px 16px;
-      border-radius: 10px;
+      padding: $tooltip-block $tooltip-inline;
+      border-radius: 0.625rem;
 
       &::after {
         content: '';
@@ -48,14 +48,14 @@
       }
 
       &.active {
-        display: flex
+        display: flex;
       }
     }
   }
 
   &__social-icons {
     display: flex;
-    gap: 8px;
+    gap: $share-gap;
   }
 
   &__share-btn {
@@ -68,10 +68,10 @@
     height: auto;
     object-fit: cover;
     object-position: left;
-    border-radius: 20px 20px 0 0;
+    border-radius: 1.25rem 1.25rem 0 0;
 
     @media screen and (min-width: 600px) {
-      border-radius: 20px 0 0 20px;
+      border-radius: 1.25rem 0 0 1.25rem;
       height: 100%;
       max-width: 365px;
     }
@@ -87,6 +87,7 @@
 
     &-social {
       visibility: hidden;
+      opacity: 0;
       position: absolute;
       display: flex;
       justify-content: space-between;
@@ -94,13 +95,13 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      border-radius: 0 0 20px 20px;
+      border-radius: 0 0 1.25rem 1.25rem;
       padding-block: $card-share-block;
       background-color: $color-dark-grayish-blue;
-      transition: visibility 0.3s ease;
+      transition: visibility 0s, opacity 0.3s ease;
 
       @media screen and (min-width: 600px) {
-        border-radius: 0 0 20px 0;
+        border-radius: 0 0 1.25rem 0;
       }
 
       @media screen and (min-width: 1024px) {
@@ -109,13 +110,15 @@
 
       &.active {
         visibility: visible;
+        opacity: 1;
+        transition: opacity 0.3s ease;
       }
 
       & > *:not(:last-child) {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap: 1rem;
+        gap: $share-gap;
 
         @include share-typography;
       }
@@ -132,12 +135,15 @@
       font-size: $card-title;
       letter-spacing: -3%;
       margin-block-end: 1.375em;
+      color: $color-dark-grayish-blue;
+      font-weight: $font-weight-bold;
     }
 
     p {
       font-size: $card-content;
       line-height: 1.54;
       letter-spacing: -4.5%;
+      color: $color-desaturated-dark-blue
     }
   }
 
@@ -167,12 +173,14 @@
         font-size: $card-accent;
         color: var(--clr-primary);
         line-height: 1;
+        color: $color-desaturated-dark-blue;
 
         & > * {
           margin: 0;
         }
 
         & > p:first-child {
+          color: $color-dark-grayish-blue;
           font-weight: 700;
         }
       }

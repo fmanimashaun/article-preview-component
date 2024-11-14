@@ -6,6 +6,12 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  color: $color-dark-grayish-blue;
+  background-color: $color-light-grayish-blue;
+
+  &:active {
+    background-color: $color-desaturated-dark-blue;
+  }
 }
 
 @mixin share-typography {
