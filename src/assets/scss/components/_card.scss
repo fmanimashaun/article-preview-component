@@ -18,17 +18,15 @@
 
   &__btn-wrapper {
     position: relative;
-    border: 1px solid red;
 
     & > *:first-child {
       position: absolute;
-      display: flex;
+      display: none;
       gap: 8px;
       justify-content: center;
       align-items: center;
       flex-wrap: nowrap;
       bottom: calc(100% + 20px);
-      border: 1px solid blue;
       width: max-content;
       left: 50%;
       transform: translateX(-50%);
@@ -36,6 +34,22 @@
       background-color: $color-dark-grayish-blue;
       padding: 16px 16px;
       border-radius: 10px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: $color-dark-grayish-blue transparent transparent
+          transparent;
+      }
+
+      &.active {
+        display: flex
+      }
     }
   }
 
@@ -85,11 +99,11 @@
       background-color: $color-dark-grayish-blue;
       transition: visibility 0.3s ease;
 
-
-
       @media screen and (min-width: 600px) {
         border-radius: 0 0 20px 0;
+      }
 
+      @media screen and (min-width: 1024px) {
         display: none;
       }
 
