@@ -7,11 +7,6 @@
   border: none;
   cursor: pointer;
   background-color: $color-light-grayish-blue;
-  color: $color-dark-grayish-blue;
-
-  &:active {
-    background-color: $color-desaturated-dark-blue;
-    color: $color-light;
-  }
+  color: $color-grayish-blue;
 }
 

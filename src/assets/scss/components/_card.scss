@@ -58,12 +58,12 @@
     display: flex;
     gap: 1rem;
 
-    & > a > img {
-        display: block;
-        width: 20px;
-        height: 20px
-      }
-    
+    &>a>img {
+      display: block;
+      width: 20px;
+      height: 20px
+    }
+
   }
 
   &__share-btn {
@@ -137,6 +137,11 @@
 
       &.active {
         display: flex;
+
+        &>button {
+          background-color: $color-grayish-blue;
+          color: $color-light;
+        }
       }
 
       &>*:not(:last-child) {
@@ -156,6 +161,7 @@
     &.close {
       display: none;
     }
+
     &-wrapper {
       display: flex;
       justify-content: space-between;
@@ -185,7 +191,7 @@
     }
 
     &-details {
-     @extend %text;
+      @extend %text;
       color: $color-desaturated-dark-blue;
 
       &>* {
