@@ -1,8 +1,8 @@
 @use './variables' as *;
 
 @mixin btn {
-  width: $card-button;
-  height: $card-button;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -15,9 +15,3 @@
   }
 }
 
-@mixin share-typography {
-  color: $color-light-grayish-blue;
-  font-size: $card-accent;
-  line-height: 1;
-  letter-spacing: 35%;
-}

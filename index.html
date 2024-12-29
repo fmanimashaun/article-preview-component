@@ -23,17 +23,45 @@
               got some simple tips to help you make any room feel complete.</p>
           </div>
           <div class="card__footer">
-            <div class="card__footer-author">
-              <img class="card__footer-author-img" src="/assets/images/avatar-michelle.jpg" alt="Michelle" />
-              <div class="card__footer-author-info">
-                <p>Michelle Appleton</p>
-                <p>28 Jun 2020</p>
+
+            <div class="card__author">
+              <div class="card__author-wrapper">
+                <div class="card__author-info">
+                  <img class="card__author-img" src="/assets/images/avatar-michelle.jpg" alt="Michelle" />
+                  <div class="card__author-details">
+                    <p>Michelle Appleton</p>
+                    <p>28 Jun 2020</p>
+                  </div>
+                </div>
+
+                <div id="author-btn" class="card__author-btn">
+                  <div class="card__social">
+                  </div>
+                  <button class="card__share-btn" aria-label="Share this article">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+                      <path fill="currentColor"
+                        d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="card__btn-wrapper">
+            <div class="card__footer-social">
               <div class="card__social">
+                <span>SHARE</span>
+                <div class="card__social-icons">
+                  <a id="facebook-share" target="_blank">
+                    <img class="card__social-icon" src="/assets/images/icon-facebook.svg" alt="Facebook" />
+                  </a>
+                  <a id="twitter-share" target="_blank">
+                    <img class="card__social-icon" src="/assets/images/icon-twitter.svg" alt="Twitter" />
+                  </a>
+                  <a id="pinterest-share" target="_blank">
+                    <img class="card__social-icon" src="/assets/images/icon-pinterest.svg" alt="Pinterest" />
+                  </a>
+                </div>
               </div>
-              <button class="card__share-btn" aria-label="Share this article">
+              <button id="social-btn" class="card__share-btn" aria-label="Share this article">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
                   <path fill="currentColor"
                     d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
@@ -41,28 +69,7 @@
               </button>
             </div>
           </div>
-          <div class="card__content-social">
-            <div class="card__social">
-              <span>SHARE</span>
-              <div class="card__social-icons">
-                <a id="facebook-share" target="_blank">
-                  <img class="card__social-icon" src="/assets/images/icon-facebook.svg" alt="Facebook" />
-                </a>
-                <a id="twitter-share"  target="_blank">
-                  <img class="card__social-icon" src="/assets/images/icon-twitter.svg" alt="Twitter" />
-                </a>
-                <a id="pinterest-share"  target="_blank">
-                  <img class="card__social-icon" src="/assets/images/icon-pinterest.svg" alt="Pinterest" />
-                </a>
-              </div>
-            </div>
-            <button class="card__share-btn" aria-label="Share this article">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
-                <path fill="currentColor"
-                  d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
-              </svg>
-            </button>
-          </div>
+
         </div>
       </div>
     </main>

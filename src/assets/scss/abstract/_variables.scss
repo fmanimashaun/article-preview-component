@@ -1,14 +1,15 @@
 // Colors
-$color-dark-grayish-blue: hsl(217, 19%, 35%);
-$color-desaturated-dark-blue: hsl(214, 17%, 51%);
-$color-grayish-blue: hsl(212, 23%, 69%);
-$color-light-grayish-blue: hsl(210, 46%, 95%);
-$color-light: hsl(0, 0%, 100%);
-$color-dark: hsl(0, 0%, 0%);
+$color-dark-grayish-blue: rgb(72, 85, 106);
+$color-desaturated-dark-blue: rgb(157, 174,194);
+$color-grayish-blue: rgb(110, 128, 152);
+$color-light-grayish-blue: rgb(236, 242, 248);
+$color-light: rgb(255, 255, 255);
+$color-dark: rgb(0, 0, 0);
 
 // Typography
 $font-family: 'Manrope', sans-serif;
-$font-weight-regular: 500;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
 $font-weight-bold: 700;
 
 // spacing
@@ -17,7 +18,7 @@ $container-block: clamp(2rem, 1.6039rem + 1.6901vw, 3.125rem); // 32px 50px
 $card-content-top: clamp(2.5rem, 2.2799rem + 0.939vw, 3.125rem); // 40px 60px
 $card-content-bottom: clamp(1.25rem, 0.6998rem + 2.3474vw, 2.8125rem); // 20px 45px
 $card-content-inline: clamp(2rem, 1.6039rem + 1.6901vw, 3.125rem); // 32px 50px
-$card-author-img: clamp(2.5rem, 2.2799rem + 0.939vw, 3.125rem); // 40px 50px
+$card-author-img: 2.5rem;
 $card-button: clamp(1.875rem, 1.6549rem + 0.939vw, 2.5rem); // 30px 40px
 $card-share-block: clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem); // 16px 30px 
 $tooltip-block: clamp(1rem, 0.3846rem + 0.9615vw, 1.25rem); // 16px 20px
@@ -30,4 +31,8 @@ $card-content: clamp(0.8125rem, 0.7025rem + 0.4695vw, 1.125rem); // 13px 18px
 $card-accent: clamp(0.8125rem, 0.7465rem + 0.2817vw, 1rem); // 13px 16px
 
 // shadows
-$card-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+$card-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.5);
+
+// border-radius
+$card-radius: 0.625rem
+

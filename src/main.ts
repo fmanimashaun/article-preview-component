@@ -1,8 +1,9 @@
 import './assets/scss/main.scss'
 
 const baseUrl = import.meta.env.BASE_URL;
-const shareBtns = document.querySelectorAll('.card__share-btn') as NodeListOf<HTMLButtonElement>;
-const shareContainer = document.querySelector('.card__content-social') as HTMLDivElement;
+const authorBtn = document.querySelector('#author-btn') as HTMLDivElement;
+const shareBtn = document.querySelector('#social-btn') as HTMLDivElement;
+const shareContainer = document.querySelector('.card__footer-social') as HTMLDivElement;
 const facebookShare = document.getElementById("facebook-share") as HTMLAnchorElement;
 const xShare = document.getElementById("twitter-share") as HTMLAnchorElement;
 const pinterestShare = document.getElementById("pinterest-share") as HTMLAnchorElement;
@@ -10,10 +11,6 @@ const pinterestShare = document.getElementById("pinterest-share") as HTMLAnchorE
 const shareTooltip = document.querySelector('.card__btn-wrapper .card__social') as HTMLDivElement;
 const currentURL = encodeURIComponent(window.location.href);
 const description = encodeURIComponent("Practice my layout skills with this article preview component. There's lots of fun to be had playing around with animations for the sharing icons as well.");
-
-console.log(facebookShare);
-console.log(xShare);
-console.log(pinterestShare);
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,12 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-shareBtns.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
 
-    if (window.innerWidth >= 1024) {
-      const shareTooltipEl = `
+authorBtn.addEventListener('click', (e: MouseEvent) => {
+  e.stopPropagation();
+
+  if (window.innerWidth >= 700) {
+    const shareTooltipEl = `
     <span>SHARE</span>
     <div class="card__social-icons">
       <a href="https://www.facebook.com/sharer/sharer.php?u=${currentURL}" target="_blank">
@@ -50,17 +47,28 @@ shareBtns.forEach((btn) => {
       </a>
     </div>`;
 
-      // Insert shareTooltip as the first child of btnwrapper
-      shareTooltip.innerHTML = shareTooltipEl;
+    // Insert shareTooltip as the first child of btnwrapper
+    shareTooltip.innerHTML = shareTooltipEl;
 
-      // Add active class to shareTooltip
-      shareTooltip.classList.toggle('active');
-    } else if (window.innerWidth < 1024) {
-      shareContainer.classList.toggle('active');
-    }
+    // Add active class to shareTooltip
+    shareTooltip.classList.toggle('active');
+  } else if (window.innerWidth < 700) {
+    const target = e.target as HTMLElement;
+    const cardAuthor = target.closest('.card__author') as HTMLDivElement;
+    shareContainer.classList.toggle('active');
+    cardAuthor.classList.toggle('close');
+  }
 
-  });
 });
+
+shareBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const target = e.target as HTMLElement;
+  const ParentDiv = target.closest('.card__footer-social') as HTMLDivElement;
+  const cardAuthor = ParentDiv.previousElementSibling as HTMLDivElement
+  shareContainer.classList.toggle('active');
+  cardAuthor.classList.toggle('close');
+})
 
 
 // Close share container when clicked away
