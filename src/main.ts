@@ -4,6 +4,7 @@ const baseUrl = import.meta.env.BASE_URL;
 const authorBtn = document.querySelector('#author-btn') as HTMLDivElement;
 const shareBtn = document.querySelector('#social-btn') as HTMLDivElement;
 const shareContainer = document.querySelector('.card__footer-social') as HTMLDivElement;
+const authorContainer = document.querySelector('.card__author') as HTMLDivElement;
 const facebookShare = document.getElementById("facebook-share") as HTMLAnchorElement;
 const xShare = document.getElementById("twitter-share") as HTMLAnchorElement;
 const pinterestShare = document.getElementById("pinterest-share") as HTMLAnchorElement;
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 authorBtn.addEventListener('click', (e: MouseEvent) => {
   e.stopPropagation();
 
-  if (window.innerWidth >= 700) {
+  if (window.innerWidth >= 840) {
     const shareTooltipEl = `
     <span>SHARE</span>
     <div class="card__social-icons">
@@ -47,27 +48,23 @@ authorBtn.addEventListener('click', (e: MouseEvent) => {
       </a>
     </div>`;
 
+    console.log(shareTooltipEl);
     // Insert shareTooltip as the first child of btnwrapper
     shareTooltip.innerHTML = shareTooltipEl;
 
     // Add active class to shareTooltip
     shareTooltip.classList.toggle('active');
-  } else if (window.innerWidth < 700) {
-    const target = e.target as HTMLElement;
-    const cardAuthor = target.closest('.card__author') as HTMLDivElement;
+  } else if (window.innerWidth < 840) {
     shareContainer.classList.toggle('active');
-    cardAuthor.classList.toggle('close');
+    authorContainer.classList.toggle('close');
   }
 
 });
 
 shareBtn.addEventListener('click', (e) => {
   e.stopPropagation();
-  const target = e.target as HTMLElement;
-  const ParentDiv = target.closest('.card__footer-social') as HTMLDivElement;
-  const cardAuthor = ParentDiv.previousElementSibling as HTMLDivElement
   shareContainer.classList.toggle('active');
-  cardAuthor.classList.toggle('close');
+  authorContainer.classList.toggle('close');
 })
 
 
@@ -76,10 +73,11 @@ document.addEventListener('click', (e) => {
   const target = e.target as HTMLElement;
 
   if (!shareContainer.contains(target) &&
-    ![...shareBtns].some((btn) => btn.contains(target)) &&
+    !shareBtn.contains(target) &&
     !shareTooltip.contains(target)) {
     shareContainer.classList.remove('active');
     shareTooltip.classList.remove('active');
+    authorContainer.classList.remove('close');
     shareTooltip.innerHTML = '';
   }
 });
@@ -88,5 +86,6 @@ document.addEventListener('click', (e) => {
 window.addEventListener('resize', () => {
   shareContainer.classList.remove('active');
   shareTooltip.classList.remove('active');
+  authorContainer.classList.remove('close');
   shareTooltip.innerHTML = '';
 });
